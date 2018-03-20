@@ -31,7 +31,7 @@ import send_email
 if not local_maxdate == remote_maxdate:
 	send_email.server.set_debuglevel(1)
 	send_email.server.login(send_email.from_addr, send_email.password)
-	send_email.server.sendmail(send_email.from_addr, [send_email.to_addr], send_email.msg.as_string())
+	send_email.server.sendmail(send_email.from_addr, send_email.to_addr, send_email.msg.as_string())
 	send_email.server.quit()
-else：
+else:
 	print ('Sync Success')

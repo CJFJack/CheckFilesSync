@@ -21,14 +21,14 @@ password = 'Itis@4321'
 # 输入SMTP服务器地址:
 smtp_server = 'smtp.exmail.qq.com'
 # 输入收件人地址：
-to_addr = 'jack_chen@shinetour.com'
+to_addr = ['jack_chen@shinetour.com', '398741302@qq.com']
 
 # 邮件对象:
 msg = MIMEMultipart('alternative')                 # 指定subtype为alternative，可以组合html和plain
 # 发件人昵称
 msg['From'] = _format_addr(u'NAS存储服务器 <%s>' % from_addr)
 # 收件人昵称
-msg['To'] = _format_addr(u'企业邮箱 <%s>' % to_addr)
+msg['To'] = ','.join(map(_format_addr, to_addr))
 # 邮件主题
 msg['Subject'] = Header(u'录音同步异常', 'utf-8').encode()
 
