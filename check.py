@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import datetime
 
 #本地录音备份存放目录
 localdir=u'F:\\Python\\test'
@@ -22,7 +23,11 @@ locallist=map(int_change, [d for d in os.listdir(localdir)])
 remotelist=map(int_change, [d for d in os.listdir(remotedir)])
 #获得list中最大的元素
 local_maxdate=max(locallist)
-remote_maxdate=max(remotelist)-1
+remote_maxdate=str(max(remotelist))
+date_str=remote_maxdate[:4]+'-'+remote_maxdate[4:6]+'-'+remote_maxdate[6:8]
+date_time=datetime.datetime.strptime(date_str, '%Y-%m-%d') + datetime.timedelta(days=-1)
+remote_maxdate=int_change(date_time.strftime('%Y%m%d'))
+
 
 
 
