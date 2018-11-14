@@ -16,12 +16,12 @@ def _format_addr(s):
         addr.encode('utf-8') if isinstance(addr, unicode) else addr))
 
 # 输入Email地址和口令:
-from_addr = 'cacti@shinetour.com'
-password = 'Itis@4321'
+from_addr = ''
+password = ''
 # 输入SMTP服务器地址:
 smtp_server = 'smtp.exmail.qq.com'
 # 输入收件人地址：
-to_addr = ['jack_chen@shinetour.com', '398741302@qq.com']
+to_addr = ['', '']
 
 # 邮件对象:
 msg = MIMEMultipart('alternative')                 # 指定subtype为alternative，可以组合html和plain
